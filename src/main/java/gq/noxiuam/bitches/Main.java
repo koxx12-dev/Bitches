@@ -9,6 +9,8 @@ import gq.noxiuam.bitches.object.data.Gender;
 import gq.noxiuam.bitches.object.data.Race;
 import lombok.SneakyThrows;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 
 public class Main {
@@ -18,12 +20,19 @@ public class Main {
 
     @SneakyThrows
     public Main() {
+        String os = System.getProperty("os.name");
+        String homeDir = System.getProperty("user.home");
+        
+        if (Files.exists(Path.of(homeDir + "/.lunarclient"))) {
+            System.out.println("No bitches?");
+            return;
+        }
+        
         // Gives me more bitches, no one should ever have more than 100 though!
         for (int i = 0; i < new Random().nextInt(100); i++) {
 
             // Define their basic human rights
             String name = new Faker().name().firstName();
-            String os = System.getProperty("os.name");
 
             int age = new Random().nextInt(30) + 18;
 
