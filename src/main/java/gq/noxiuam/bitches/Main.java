@@ -23,7 +23,7 @@ public class Main {
         String os = System.getProperty("os.name");
         String homeDir = System.getProperty("user.home");
         
-        if (Files.exists(Path.of(homeDir + "\\.lunarclient"))) {
+        if (Files.exists(Path.of(homeDir + "/.lunarclient"))) {
             System.out.println("No bitches?");
             return;
         }
