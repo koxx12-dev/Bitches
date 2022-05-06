@@ -7,8 +7,10 @@ import lombok.*;
 
 import java.util.Random;
 
-// Generic bitch
-@Getter @Setter
+/*
+    Generic bitch, nothing special to them.
+*/
+@Getter @Setter @ToString
 @AllArgsConstructor @NoArgsConstructor
 public class Bitch {
     private String name;
@@ -18,7 +20,11 @@ public class Bitch {
     private Race race;
     private Gender gender;
 
-    public void createNewBitch() {
+    /*
+        Age is always above 18 so that it's legal to have them...
+        NOTE: Name and gender may not match up, they might be transgender, or just mis-named at birth!
+    */
+    public void create() {
         this.setName(new Faker().name().firstName());
         this.setAge(new Random().nextInt(30) + 18);
         this.setRace(Race.values()[new Random().nextInt(Race.values().length)]);
