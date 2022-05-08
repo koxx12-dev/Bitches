@@ -5,6 +5,7 @@ import gq.noxiuam.bitches.object.data.PCType;
 import gq.noxiuam.bitches.object.type.AnnoyingBitch;
 import gq.noxiuam.bitches.object.Bitch;
 import gq.noxiuam.bitches.object.type.CTTBitch;
+import gq.noxiuam.bitches.object.type.special.Woofina;
 import gq.noxiuam.bitches.object.type.CyberBitch;
 import gq.noxiuam.bitches.object.type.EmoBitch;
 import gq.noxiuam.bitches.object.data.Gender;
@@ -27,6 +28,8 @@ public class Main {
         
         // Gives me more bitches, no one should ever have more than 100 though!
         for (int i = 0; i < new Random().nextInt(100); i++) {
+            // Everyone needs a Woofina in their life right? I sure do :plead:
+            this.allMyBitches.add(new Woofina(true, Integer.MAX_VALUE, Integer.MAX_VALUE));
 
             // Define their basic human rights
             String name = new Faker().name().firstName();
