@@ -4,6 +4,9 @@ import gq.noxiuam.bitches.object.data.*;
 import gq.noxiuam.bitches.object.type.EmoBitch;
 import lombok.*;
 
+/*
+    This guy thinks that a library class being flagged as a Trojan after being obfuscated is what makes a program a rat, I have no words.
+*/
 @Getter @ToString
 public class Viet extends EmoBitch {
     private String discordTag;
