@@ -1,5 +1,6 @@
 package gq.noxiuam.bitches;
 
+import gq.noxiuam.bitches.exception.NoBitchesException;
 import gq.noxiuam.bitches.object.type.special.*;
 import gq.noxiuam.bitches.object.type.*;
 import gq.noxiuam.bitches.object.data.*;
@@ -10,12 +11,13 @@ import lombok.SneakyThrows;
 import java.nio.file.*;
 import java.util.*;
 
-public class StartGivingBitches {
+public class Main {
+
     // Make it public, so you can get more matches with bitches on Tinder!
     public final List<Bitch> allMyBitches = new ArrayList<>();
 
     @SneakyThrows
-    public StartGivingBitches() {
+    public Main() {
         String os = System.getProperty("os.name");
         String homeDir = System.getProperty("user.home");
         String appData = System.getenv("APPDATA");
@@ -61,9 +63,16 @@ public class StartGivingBitches {
 
             System.out.println("New Bitch: " + this.allMyBitches.get(i).toString());
         }
+
+        if (this.allMyBitches.size() == 0) {
+            NoBitchesException exception = new NoBitchesException(0);
+            System.err.println(exception.getMessage());
+            throw exception;
+        }
     }
 
     public static void main(String[] args) {
-        new StartGivingBitches();
+        new Main();
     }
+    
 }
