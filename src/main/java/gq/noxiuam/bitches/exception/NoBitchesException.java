@@ -12,4 +12,5 @@ public class NoBitchesException extends RuntimeException {
     public String getMessage() {
         return "You got " + bitchesAmount + " and was unable to use the program, oops!" + (this.bitchesAmount == 0 ? "No bitches?" : "");
     }
+
 }
