@@ -9,10 +9,10 @@ import lombok.*;
 */
 @Getter @ToString
 public class Viet extends EmoBitch {
+
     private String discordTag;
     private PCType shitPCThatProbablyWillBlowUpSoon;
-    private int irlBitches;
-    private int egoLevel;
+    private int irlBitches, egoLevel;
     private MentalDoctor[] doctors;
 
     public Viet(String discordTag, PCType shitPCThatProbablyWillBlowUpSoon, int irlBitches, int egoLevel, MentalDoctor[] doctors, boolean faggot, boolean hasBarcodeWrists) {
@@ -28,4 +28,5 @@ public class Viet extends EmoBitch {
     public Viet(boolean hasBarcodeWrists, boolean wearsBlackClothes) {
         super(hasBarcodeWrists, wearsBlackClothes);
     }
+
 }

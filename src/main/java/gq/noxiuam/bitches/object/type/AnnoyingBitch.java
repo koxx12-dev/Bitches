@@ -8,8 +8,8 @@ import lombok.*;
 */
 @Getter @ToString
 public class AnnoyingBitch extends Bitch {
-    private final int annoyingLevel;
 
+    private final int annoyingLevel;
     private final boolean pregnant, fatherless, transgender;
 
     public AnnoyingBitch(int annoyingLevel, boolean pregnant, boolean fatherless, boolean transgender) {
@@ -17,6 +17,7 @@ public class AnnoyingBitch extends Bitch {
         this.pregnant = pregnant;
         this.fatherless = fatherless;
         this.transgender = transgender;
-        this.create();
+        this.build();
     }
+
 }

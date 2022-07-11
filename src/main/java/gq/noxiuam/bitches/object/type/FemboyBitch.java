@@ -8,12 +8,14 @@ import lombok.*;
 */
 @Getter
 public class FemboyBitch extends Bitch {
+
     private final boolean fatherless, degenerate;
     private final int hotness = -Integer.MAX_VALUE;
 
     public FemboyBitch(boolean fatherless, boolean degenerate) {
         this.fatherless = fatherless;
         this.degenerate = degenerate;
-        this.create();
+        this.build();
     }
+
 }

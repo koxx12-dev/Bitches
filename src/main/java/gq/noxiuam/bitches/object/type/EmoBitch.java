@@ -8,11 +8,13 @@ import lombok.*;
 */
 @Getter @ToString
 public class EmoBitch extends Bitch {
+
     private final boolean hasBarcodeWrists, wearsBlackClothes;
 
     public EmoBitch(boolean hasBarcodeWrists, boolean wearsBlackClothes) {
         this.hasBarcodeWrists = hasBarcodeWrists;
         this.wearsBlackClothes = wearsBlackClothes;
-        this.create();
+        this.build();
     }
+
 }

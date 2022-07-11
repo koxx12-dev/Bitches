@@ -9,12 +9,14 @@ import lombok.*;
 */
 @Getter
 public class CTTBitch extends Bitch {
+
     private final boolean usesFogInVideos, getsPeggedByWoofina, hasAShittyMic;
 
     public CTTBitch(boolean usesFogInVideos, boolean getsPeggedByWoofina, boolean hasAShittyMic) {
         this.usesFogInVideos = usesFogInVideos;
         this.getsPeggedByWoofina = getsPeggedByWoofina;
         this.hasAShittyMic = hasAShittyMic;
-        this.create();
+        this.build();
     }
+
 }

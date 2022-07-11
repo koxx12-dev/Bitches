@@ -10,6 +10,7 @@ import lombok.*;
 */
 @Getter
 public class CyberBitch extends Bitch {
+
     private final PCType pcType;
     private final boolean gay;
 
@@ -17,4 +18,5 @@ public class CyberBitch extends Bitch {
         this.pcType = pcType;
         this.gay = gay;
     }
+
 }
