@@ -1,3 +1,4 @@
+// Poyo
 package gq.noxiuam.bitches.exception;
 
 public class NoBitchesException extends RuntimeException {
