@@ -64,7 +64,8 @@ public class Main {
             System.out.println("New Bitch: " + this.allMyBitches.get(i).toString());
         }
 
-        if (this.allMyBitches.size() == 0) {
+        int amountOfBitches = this.allMyBitches.size();
+        if (amountOfBitches == 0 || amountOfBitches < 1) {
             NoBitchesException exception = new NoBitchesException(0);
             System.err.println(exception.getMessage());
             throw exception;
