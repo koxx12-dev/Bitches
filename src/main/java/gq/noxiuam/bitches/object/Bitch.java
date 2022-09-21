@@ -1,6 +1,7 @@
 package gq.noxiuam.bitches.object;
 
 import com.github.javafaker.Faker;
+import gq.noxiuam.bitches.Main;
 import gq.noxiuam.bitches.object.data.Gender;
 import gq.noxiuam.bitches.object.data.Race;
 import lombok.*;
@@ -25,9 +26,9 @@ public class Bitch {
     */
     public void build() {
         this.setName(new Faker().name().firstName());
-        this.setAge(new Random().nextInt(30) + 18);
-        this.setRace(Race.values()[new Random().nextInt(Race.values().length)]);
-        this.setGender(Gender.values()[new Random().nextInt(Gender.values().length)]);
+        this.setAge(Main.random.nextInt(30) + 18);
+        this.setRace(Race.values()[Main.random.nextInt(Race.values().length)]);
+        this.setGender(Gender.values()[Main.random.nextInt(Gender.values().length)]);
     }
 
 }
