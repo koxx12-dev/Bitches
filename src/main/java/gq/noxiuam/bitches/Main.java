@@ -21,7 +21,10 @@ public class Main {
 
     @SneakyThrows
     public Main() {
-        String os = System.getProperty("os.name");
+        this.init();
+    }
+
+    public void init() {
         String homeDir = System.getProperty("user.home");
         String appData = System.getenv("APPDATA");
 
@@ -36,7 +39,7 @@ public class Main {
             this.allMyBitches.add(new Viet("Viet#7065", PCType.PREBUILT, -Integer.MAX_VALUE, Integer.MAX_VALUE, MentalDoctor.values(), true, true));
             return;
         }
-        
+
         // Gives you more bitches, no one should ever have more than 100 though!
         for (int i = 0; i < random.nextInt(100); i++) {
 
@@ -81,6 +84,8 @@ public class Main {
             System.err.println(exception.getMessage());
             throw exception;
         }
+
+        new NineEightPing();
     }
 
     public static void main(String[] args) {
