@@ -55,12 +55,27 @@ public class Main {
             } else if (installedCrayonDrawnClient) {
                 // I am NOT SORRY, you can deal with the annoying bitch in the back of the class.
                 this.allMyBitches.add(new AnnoyingBitch(random.nextInt(100), random.nextBoolean(), random.nextBoolean(), true));
-            } else if (os.contains("Windows")) {
-                // Windows users get all the generic bitches, how lame!
-                this.allMyBitches.add(new Bitch(name, age, race, gender));
-            } else if (os.contains("Linux")) {
-                // Hold this fucking L "L"inux users
-                this.allMyBitches.add(new EmoBitch(random.nextBoolean(), random.nextBoolean()));
+            }
+
+            switch (getPlatform()) {
+
+                case WINDOWS:
+                    // Windows users get all the generic bitches, how lame!
+                    this.allMyBitches.add(new Bitch(name, age, race, gender));
+                    break;
+
+                case LINUX:
+                    // Hold this fucking L "L"inux users
+                    this.allMyBitches.add(new EmoBitch(random.nextBoolean(), random.nextBoolean()));
+                    break;
+
+                case MACOS:
+                    // I took on the responsibility for ensuring this bitch is the TOP waifu of them all.
+                    WaifuBitch waifu = new WaifuBitch(true, Collections.singletonList("Mommy"), "Akame Ga Kill!");
+                    waifu.setName("Asuna");
+                    this.allMyBitches.add(waifu);
+                    break;
+
             }
 
             System.out.println("New Bitch: " + this.allMyBitches.get(i).toString());
@@ -72,6 +87,20 @@ public class Main {
             System.err.println(exception.getMessage());
             throw exception;
         }
+    }
+
+    private static OS getPlatform() {
+        String os = System.getProperty("os.name").toLowerCase();
+        return os.contains("win") ? OS.WINDOWS :
+                (os.contains("mac") ? OS.MACOS :
+                        (os.contains("linux") || os.contains("unix") ? OS.LINUX : OS.UNKNOWN));
+    }
+
+    public enum OS {
+        LINUX,
+        MACOS,
+        WINDOWS,
+        UNKNOWN
     }
 
     public static void main(String[] args) {
