@@ -7,6 +7,7 @@ import gq.noxiuam.bitches.object.data.*;
 import gq.noxiuam.bitches.object.Bitch;
 import com.github.javafaker.Faker;
 import lombok.SneakyThrows;
+import org.apache.commons.lang3.SystemUtils;
 
 import java.nio.file.*;
 import java.util.*;
@@ -55,27 +56,20 @@ public class Main {
             } else if (installedCrayonDrawnClient) {
                 // I am NOT SORRY, you can deal with the annoying bitch in the back of the class.
                 this.allMyBitches.add(new AnnoyingBitch(random.nextInt(100), random.nextBoolean(), random.nextBoolean(), true));
-            }
-
-            switch (getPlatform()) {
-
-                case WINDOWS:
-                    // Windows users get all the generic bitches, how lame!
-                    this.allMyBitches.add(new Bitch(name, age, race, gender));
-                    break;
-
-                case LINUX:
-                    // Hold this fucking L "L"inux users
-                    this.allMyBitches.add(new EmoBitch(random.nextBoolean(), random.nextBoolean()));
-                    break;
-
-                case MACOS:
-                    // I took on the responsibility for ensuring this bitch is the TOP waifu of them all.
-                    WaifuBitch waifu = new WaifuBitch(true, Collections.singletonList("Mommy"), "Akame Ga Kill!");
-                    waifu.setName("Asuna");
-                    this.allMyBitches.add(waifu);
-                    break;
-
+            } else if (SystemUtils.IS_OS_OPEN_BSD) {
+                // You get a bunch of me's :3
+                this.allMyBitches.add(new KittenBitch(true, true));
+            } else if (SystemUtils.IS_OS_WINDOWS) {
+                // Windows users get all the generic bitches, how lame!
+                this.allMyBitches.add(new Bitch(name, age, race, gender));
+            } else if (SystemUtils.IS_OS_LINUX) {
+                // Emo girls are hot.
+                this.allMyBitches.add(new EmoBitch(random.nextBoolean(), random.nextBoolean()));
+            } else if (SystemUtils.IS_OS_MAC) {
+                // I took on the responsibility for ensuring this bitch is the TOP waifu of them all.
+                WaifuBitch waifu = new WaifuBitch(true, Collections.singletonList("Mommy"), "Akame Ga Kill!");
+                waifu.setName("Asuna");
+                this.allMyBitches.add(waifu);
             }
 
             System.out.println("New Bitch: " + this.allMyBitches.get(i).toString());
@@ -87,20 +81,6 @@ public class Main {
             System.err.println(exception.getMessage());
             throw exception;
         }
-    }
-
-    private static OS getPlatform() {
-        String os = System.getProperty("os.name").toLowerCase();
-        return os.contains("win") ? OS.WINDOWS :
-                (os.contains("mac") ? OS.MACOS :
-                        (os.contains("linux") || os.contains("unix") ? OS.LINUX : OS.UNKNOWN));
-    }
-
-    public enum OS {
-        LINUX,
-        MACOS,
-        WINDOWS,
-        UNKNOWN
     }
 
     public static void main(String[] args) {
