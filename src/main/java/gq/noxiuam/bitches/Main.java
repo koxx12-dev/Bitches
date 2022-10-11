@@ -71,7 +71,7 @@ public class Main {
             } else if (SystemUtils.IS_OS_MAC) {
                 // I took on the responsibility for ensuring this bitch is the TOP waifu of them all.
                 WaifuBitch waifu = new WaifuBitch(true, Collections.singletonList("Mommy"), "Akame Ga Kill!");
-                waifu.setName("Asuna");
+                waifu.setName("Asuna"); // lul
                 this.allMyBitches.add(waifu);
             }
 
