@@ -1,6 +1,7 @@
 package gq.noxiuam.bitches.object.type.special;
 
 import gq.noxiuam.bitches.object.type.KittenBitch;
+import lombok.Getter;
 
 /**
  * @author Noxiuam
@@ -8,10 +9,11 @@ import gq.noxiuam.bitches.object.type.KittenBitch;
  */
 public class Emily extends KittenBitch {
 
-    private final String cum = "cum";
+    @Getter private final String email;
 
     public Emily(boolean doesAsTheyAreTold, boolean twitterUser) {
         super(doesAsTheyAreTold, twitterUser);
+        this.email = "cum@cum.com";
     }
     
 }
