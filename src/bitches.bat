@@ -91,22 +91,22 @@ for %%a in (%*) do (
     set /a params+=1
 )
 if %params% == 1 (
-    set "bitch=This %1 bitch, named %name%, is %age% years old, %race%, and %gender%."
+    set "bitch=[90mThis [0m%~1[90m bitch, named [0m%name%[90m, is [0m%age%[90m years old, [0m%race%[90m, and [0m%gender%[90m.[0m"
 )
 if %params% == 2 (
-    set "bitch=This %1 bitch, named %name%, is %age% years old, %race%, and %gender%. And this bitch %~2."
+    set "bitch=[90mThis [0m%~1[90m bitch, named [0m%name%[90m, is [0m%age%[90m years old, [0m%race%[90m, and [0m%gender%[90m. And this bitch [0m%~2[90m.[0m"
 )
 if %params% == 3 (
-    set "bitch=This %1 bitch, named %name%, is %age% years old, %race%, and %gender%. And this bitch %~2 and %~3."
+    set "bitch=[90mThis [0m%~1[90m bitch, named [0m%name%[90m, is [0m%age%[90m years old, [0m%race%[90m, and [0m%gender%[90m. And this bitch [0m%~2[90m and [0m%~3[90m.[0m"
 )
 if %params% == 4 (
-    set "bitch=This %1 bitch, named %name%, is %age% years old, %race%, and %gender%. And this bitch %~2, %~3, and %~4."
+    set "bitch=[90mThis [0m%~1[90m bitch, named [0m%name%[90m, is [0m%age%[90m years old, [0m%race%[90m, and [0m%gender%[90m. And this bitch [0m%~2[90m, [0m%~3[90m, and [0m%~4[90m.[0m"
 )
 if %params% == 5 (
-    set "bitch=This %1 bitch, named %name%, is %age% years old, %race%, and %gender%. And this bitch %~2, %~3, %~4, and %~5."
+    set "bitch=[90mThis [0m%~1[90m bitch, named [0m%name%[90m, is [0m%age%[90m years old, [0m%race%[90m, and [0m%gender%[90m. And this bitch [0m%~2[90m, [0m%~3[90m, [0m%~4[90m, and [0m%~5[90m.[0m"
 )
 if %params% == 6 (
-    set "bitch=This %1 bitch, named %name%, is %age% years old, %race%, and %gender%. And this bitch %~2, %~3, %~4, %~5, and %~6."
+    set "bitch=[90mThis [0m%~1[90m bitch, named [0m%name%[90m, is [0m%age%[90m years old, [0m%race%[90m, and [0m%gender%[90m. And this bitch [0m%~2[90m, [0m%~3[90m, [0m%~4[90m, [0m%~5[90m, and [0m%~6[90m.[0m"
 )
 goto :eof
 
