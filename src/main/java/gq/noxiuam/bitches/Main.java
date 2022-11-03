@@ -81,7 +81,6 @@ public class Main {
         int amountOfBitches = this.allMyBitches.size();
 
         this.allMyBitches.add(new Gami(true));
-        this.allMyBitches.add(new Decencies(false));
 
         if (installedCheatBreakerSkid && amountOfBitches == 69) {
             this.allMyBitches.add(new Emily(true, true));
