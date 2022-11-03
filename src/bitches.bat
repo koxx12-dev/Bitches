@@ -1,9 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call :defaultVariables
-
 :: test for lunar, feather, and badlion
+set hasLunar=false
+set hasFeather=false
+set hasBLC=false
 if exist "%appdata%\lunarclient" (
     set hasLunar=true
 ) else (
@@ -18,9 +19,11 @@ if exist "C:\Program Files\Badlion Client" (
     set hasBLC=true
 )
 
+:: number of bitches to generate
 set /a bitchAmount=%random% * 100 / 32768 + 1
 set loopnum=0
 
+:: generates random parameters to use to make bitches from a list of pre-defined parameters
 :loop
 set /a loopnum+=1
 :: non-specialty bitches
@@ -35,7 +38,7 @@ if %bitchDecider:~0,1% == 1 (
     goto endOfBitchGen
 )
 if %bitchDecider:~0,1% == 2 (
-    :: generic
+    :: generic bitches and specialty bitches
     set /a genericBitchDecider=!random! * 4 / 32768 + 0
     if !genericBitchDecider! == 1 (
         if %hasLunar% == true (
@@ -58,6 +61,7 @@ if %bitchDecider:~0,1% == 2 (
             goto endOfBitchGen
         )
     )
+    :: standard bitch
     call :makeBitch standard
     goto endOfBitchGen
 )
@@ -81,12 +85,8 @@ exit
 :: functions
 :: ###############################
 
-:defaultVariables
-set hasLunar=false
-set hasFeather=false
-set hasBLC=false
-goto :eof
-
+:: generates bitches with some parameters as an input
+:: usage: call :makeBitch type "is trait one" "likes example" "can't spell example"
 :makeBitch
 set /a age=%random% * 30 / 32768 + 18
 set params=0
@@ -117,6 +117,7 @@ if %params% == 6 (
 )
 goto :eof
 
+:: get a random gender
 :getGender
 set /a genderDecider=%random% * 3 / 32768 + 0
 if %genderDecider% == 0 set "gender=male"
@@ -124,6 +125,7 @@ if %genderDecider% == 1 set "gender=female"
 if %genderDecider% == 2 set "gender=non-binary"
 goto :eof
 
+:: get a random race
 :getRace
 set /a raceDecider=%random% * 4 / 32768 + 0
 if %raceDecider% == 0 set race=African
@@ -132,12 +134,14 @@ if %raceDecider% == 2 set race=Causcasian
 if %raceDecider% == 3 set race=Hispanic
 goto :eof
 
+:: get a random name from the list of names and sets it to the variable name
 :getName
 if not defined name1 call :setNames
 set /a nameDecider=%random% * 420 / 32768 + 1
 set name=!name%nameDecider%!
 goto :eof
 
+:: sets the names "array"
 :setNames
 set name1=Christopher
 set name2=Jessica
