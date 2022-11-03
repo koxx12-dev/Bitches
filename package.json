@@ -1,0 +1,22 @@
+{
+  "name": "bitches",
+  "version": "1.0.0",
+  "description": "Gives you more Bitches",
+  "main": "src/Main.js",
+  "scripts": {
+    "test": "node src/Main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noxiuam/Bitches.git"
+  },
+  "author": "Noxiuam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noxiuam/Bitches/issues"
+  },
+  "homepage": "https://github.com/Noxiuam/Bitches#readme",
+  "dependencies": {
+    "random-human-names": "^2.0.4"
+  }
+}
