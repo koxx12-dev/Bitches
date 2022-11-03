@@ -3,8 +3,6 @@ setlocal enabledelayedexpansion
 
 call :defaultVariables
 
-goto :skipSpecialty
-
 :: test for lunar, feather, and badlion
 if exist "%appdata%\lunarclient" (
     set hasLunar=true
@@ -20,30 +18,17 @@ if exist "C:\Program Files\Badlion Client" (
     set hasBLC=true
 )
 
-:skipSpecialty
-
 set /a bitchAmount=%random% * 100 / 32768 + 1
 set loopnum=0
 
 :loop
 set /a loopnum+=1
-if %hasLunar% == true (
-    :: ctt
-    call :makeBitch CTT "uses fog in their videos" "gets pegged by Woofina" "has a shitty mic"
-    goto endOfBitchGen
-)
-if %hasFeather% == true (
-    :: cyber
-    call :makeBitch cyber "brought forge" "has a prebuilt pc" "is gay"
-    goto endOfBitchGen
-)
-if %hasBLC% == true (
-    :: annoying
-    call :makeBitch annoying "is fatheless" "is pregnant" "is annoying" "is transgender"
-    goto endOfBitchGen
-)
 :: non-specialty bitches
 set /a bitchDecider=%random% * 399 / 32768 + 100
+:: slightly better random stuff
+set /a loopnumModTwo = %loopnum% %% 2
+if %loopnumModTwo% == 1 set /a bitchDecider=%random% * 395 / 32768 + 100
+:: deciding which bitch to give
 if %bitchDecider:~0,1% == 1 (
     :: kitten
     call :makeBitch kitten "does what they're told" "uses twitter" "is fatherless"
@@ -51,6 +36,28 @@ if %bitchDecider:~0,1% == 1 (
 )
 if %bitchDecider:~0,1% == 2 (
     :: generic
+    set /a genericBitchDecider=!random! * 4 / 32768 + 0
+    if !genericBitchDecider! == 1 (
+        if %hasLunar% == true (
+            :: ctt
+            call :makeBitch CTT "uses fog in their videos" "gets pegged by Woofina" "has a shitty mic"
+            goto endOfBitchGen
+        )
+    )
+    if !genericBitchDecider! == 2 (
+        if %hasFeather% == true (
+            :: cyber
+            call :makeBitch cyber "brought forge" "has a prebuilt pc" "is gay"
+            goto endOfBitchGen
+        )
+    )
+    if !genericBitchDecider! == 3 (
+        if %hasBLC% == true (
+            :: annoying
+            call :makeBitch annoying "is fatheless" "pregnant" "annoying" "transgender"
+            goto endOfBitchGen
+        )
+    )
     call :makeBitch standard
     goto endOfBitchGen
 )
@@ -118,12 +125,11 @@ if %genderDecider% == 2 set "gender=non-binary"
 goto :eof
 
 :getRace
-set /a raceDecider=%random% * 7 / 32768 + 0
+set /a raceDecider=%random% * 4 / 32768 + 0
 if %raceDecider% == 0 set race=African
 if %raceDecider% == 1 set race=Asian
 if %raceDecider% == 2 set race=Causcasian
 if %raceDecider% == 3 set race=Hispanic
-if %raceDecider% == 4 set race=Hispanic
 goto :eof
 
 :getName
