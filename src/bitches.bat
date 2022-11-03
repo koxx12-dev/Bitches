@@ -1,3 +1,5 @@
+:: made by https://github.com/Thqrn / Frost#5872
+:: licensed under GPL-3.0
 @echo off
 setlocal enabledelayedexpansion
 
