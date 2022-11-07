@@ -6,7 +6,7 @@ import gq.noxiaum.bitches.obj.props.Race.Race
 
 import scala.util.Random
 
-case class EmoBitch(var blackClothesAddict: Boolean, var daddyIssues: Boolean, var BitchName: String, var BitchAge: Int, var BitchRace: Race, var BitchGender: Gender)
+case class  EmoBitch(var blackClothesAddict: Boolean, var daddyIssues: Boolean, var BitchName: String, var BitchAge: Int, var BitchRace: Race, var BitchGender: Gender)
   extends Bitch(
     BitchName,
     BitchAge,
