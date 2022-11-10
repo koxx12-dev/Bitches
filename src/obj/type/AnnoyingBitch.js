@@ -5,11 +5,10 @@ const { Bitch } = require("../Bitch");
 */
 class AnnoyingBitch extends Bitch {
 
-    constructor(annoyingLevel, pregnant, fatherless, transgender) {
+    constructor(annoyingLevel, pregnant, fatherless) {
         this.annoyingLevel = annoyingLevel;
         this.pregnant = pregnant;
         this.fatherless = fatherless;
-        this.transgender = transgender;
     }
 
 }
