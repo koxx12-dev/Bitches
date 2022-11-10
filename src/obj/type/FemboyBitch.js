@@ -5,9 +5,9 @@ const { Bitch } = require("../Bitch");
 */
 class FemboyBitch extends Bitch {
 
-    constructor(fatherless, degenerate) {
-        this.fatherless = fatherless;
-        this.degenerate = degenerate;
+    constructor(hot, thiccthighs) {
+        this.hot = hot;
+        this.thiccthighs = thiccthighs;
     }
 
 }
