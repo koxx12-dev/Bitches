@@ -7,6 +7,7 @@ import gq.noxiuam.bitches.object.data.*;
 import gq.noxiuam.bitches.object.Bitch;
 import com.github.javafaker.Faker;
 import lombok.SneakyThrows;
+import lombok.val;
 import org.apache.commons.lang3.SystemUtils;
 
 import java.nio.file.*;
@@ -31,6 +32,7 @@ public class Main {
         boolean installedCheatBreakerSkid = Files.exists(Path.of(homeDir + "/.lunarclient"));
         boolean installedFakeForge = Files.exists(Path.of(appData + "/.feather"));
         boolean installedCrayonDrawnClient = Files.exists(Path.of("C:\\Program Files\\Badlion Client"));
+        boolean isAvidGradleUser = Files.exists(Path.of(homeDir + "/.gradle"));
 
         /*
             Since Viet wants to be "smart", he can have his own bitch, which is just mirroring his personality.
@@ -49,17 +51,24 @@ public class Main {
             Race race = Race.values()[random.nextInt(Race.values().length)];
             Gender gender = Gender.values()[random.nextInt(Gender.values().length)];
             PCType pcType = PCType.values()[random.nextInt(PCType.values().length)];
+            CodeQuality codeQuality = CodeQuality.values()[random.nextInt(CodeQuality.values().length)];
 
             if (installedCheatBreakerSkid) {
                 // Okay Lunar users, I am most definitely not sorry for this one.
                 this.allMyBitches.add(new CTTBitch(random.nextBoolean(), random.nextBoolean(), random.nextBoolean()));
-            } else if (installedFakeForge) {
+            }
+
+            if (installedFakeForge) {
                 // Okay Feather users, im sorry to do this to you, but you bought forge, so here is my gift to you.
                 this.allMyBitches.add(new CyberBitch(pcType, random.nextBoolean()));
-            } else if (installedCrayonDrawnClient) {
+            }
+
+            if (installedCrayonDrawnClient) {
                 // I am NOT SORRY, you can deal with the annoying bitch in the back of the class.
                 this.allMyBitches.add(new AnnoyingBitch(random.nextInt(100), random.nextBoolean(), random.nextBoolean(), true));
-            } else if (SystemUtils.IS_OS_OPEN_BSD) {
+            }
+
+            if (SystemUtils.IS_OS_OPEN_BSD) {
                 // You get a bunch of me's :3
                 this.allMyBitches.add(new KittenBitch(true, true));
             } else if (SystemUtils.IS_OS_WINDOWS) {
@@ -73,6 +82,12 @@ public class Main {
                 WaifuBitch waifu = new WaifuBitch(true, Collections.singletonList("Mommy"), "Akame Ga Kill!");
                 waifu.setName("Asuna"); // lul
                 this.allMyBitches.add(waifu);
+            }
+
+            if (isAvidGradleUser) {
+                GrowlyX growly = new GrowlyX(codeQuality);
+                System.out.println("GrowlyX's code quality: " + codeQuality.name());
+                this.allMyBitches.add(growly);
             }
 
             System.out.println("New Bitch: " + this.allMyBitches.get(i).toString());
