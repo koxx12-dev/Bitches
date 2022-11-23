@@ -10,6 +10,7 @@ Bitches is in multiple languages!
 - [Java](https://github.com/Noxiuam/Bitches/tree/java)
 - [Kotlin](https://github.com/Noxiuam/Bitches/tree/kotlin)
 - [JavaScript](https://github.com/Noxiuam/Bitches/tree/javascript)
+- [Scala](https://github.com/Noxiuam/Bitches/tree/scala)
 - [Batch](https://github.com/Noxiuam/Bitches/tree/batch)
 
 ### Planned languages
