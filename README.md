@@ -15,7 +15,6 @@ Bitches is in multiple languages!
 
 ### Planned languages
 
-- [Go](https://github.com/Noxiuam/Bitches/tree/go)
 - [C](https://github.com/Noxiuam/Bitches/tree/c)
 - [C#](https://github.com/Noxiuam/Bitches/tree/c#)
 - [C++](https://github.com/Noxiuam/Bitches/tree/c++)
