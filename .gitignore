@@ -1,2 +1,4 @@
-.idea
-target
+__pycache__/
+*.pyc
+venv/
+.vscode/
