@@ -13,10 +13,10 @@ Bitches is in multiple languages!
 - [Python](https://github.com/Noxiuam/Bitches/tree/python)
 - [Scala](https://github.com/Noxiuam/Bitches/tree/scala)
 - [Batch](https://github.com/Noxiuam/Bitches/tree/batch)
+- [Rust](https://github.com/Noxiuam/Bitches/tree/rust)
 
 ### Planned languages
 
 - [C](https://github.com/Noxiuam/Bitches/tree/c)
 - [C#](https://github.com/Noxiuam/Bitches/tree/c#)
 - [C++](https://github.com/Noxiuam/Bitches/tree/c++)
-- [Rust](https://github.com/Noxiuam/Bitches/tree/rust)
